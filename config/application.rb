@@ -23,15 +23,15 @@ module DokDownloader
       g.factory_bot dir: 'spec/factories'
       g.helper false
       g.stylesheets false
-      # Don't generate system test files.
-      g.system_tests nil
+      g.template_engine :slim
+      g.system_tests true
       g.integration_tool :rspec
       g.test_framework :rspec
       g.helper_specs false
       g.controller_specs true
       g.view_specs false
       g.routing_specs false
-      g.request_specs true
+      g.request_specs false
       g.model_specs true
       g.job_specs true
     end
