@@ -81,6 +81,6 @@ test:
 #
 production:
   <<: *default
-  database: dok_downloader_production
-  username: dok_downloader
-  password: <%= ENV['DOK_DOWNLOADER_DATABASE_PASSWORD'] %>
+  # database: dok_downloader_production
+  # username: dok_downloader
+  # password: <%= ENV['POSTGRES_PASSWORD'] %>

@@ -1,5 +1,8 @@
 FROM ruby:3.0.0
 
+COPY entrypoint.sh /usr/bin/
+COPY . /app
+
 RUN apt-get update -yq \
   && apt-get install --no-install-recommends -yqq \
     gnupg curl python3-pip \
@@ -20,24 +23,23 @@ RUN apt-get update -yq \
   && apt-get install --no-install-recommends -yqq yarn \
   && pip3 install youtube-dl \
   && apt-get clean \
-  && mkdir /app
+  # && mkdir /app \
+  && groupadd -g 1000 app \
+  && useradd -m -g 1000 -u 1000 -G users app \
+  && chown -R app:app /app \
+  && chmod +x /usr/bin/entrypoint.sh
 
 ENV RAILS_ENV production
 ENV RAILS_LOG_TO_STDOUT true
 
-ADD . /app
 WORKDIR /app
+USER app
 
 RUN bundle config set --local without 'development test' \
   && bundle config set --local frozen 'true' \
   && bundle install --no-cache \
-  && yarn install --link-duplicates --production \
-  && bin/rails webpacker:compile \
-  && bin/rails assets:precompile \
-  && rm -rf vendor/* tmp/cache/*
+  && yarn install
 
-COPY entrypoint.sh /usr/bin/
-RUN chmod +x /usr/bin/entrypoint.sh
-ENTRYPOINT ["/usr/bin/entrypoint.sh"]
 EXPOSE 3000
+ENTRYPOINT ["/usr/bin/entrypoint.sh"]
 CMD ["bin/rails", "server", "-b", "0.0.0.0"]

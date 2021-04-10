@@ -4,5 +4,5 @@ Rails.application.routes.draw do
   resources :arte_downloads
   resources :target_dirs
 
-  root to: 'downloads#index'
+  root to: 'arte_downloads#index'
 end
