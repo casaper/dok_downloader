@@ -10,6 +10,7 @@ gem 'image_processing'
 gem 'pg', '~> 1.1'
 gem 'puma', '~> 5.0'
 gem 'sass-rails'
+gem 'slim-rails'
 gem 'turbolinks', '~> 5'
 gem 'webpacker'
 

@@ -2,8 +2,7 @@
   "name": "dok-downloader",
   "private": true,
   "version": "0.1.0",
-  "scripts": {
-  },
+  "scripts": {},
   "dependencies": {
     "@babel/preset-typescript": "^7.13.0",
     "@rails/actioncable": "^6.0.0",
@@ -14,6 +13,11 @@
     "typescript": "^4.2.4"
   },
   "devDependencies": {
+    "@types/rails-actioncable": "^0.0.21",
+    "@types/rails__actioncable": "^6.1.4",
+    "@types/rails__activestorage": "^6.0.0",
+    "@types/rails__ujs": "^6.0.0",
+    "@types/turbolinks": "^5.2.0",
     "@typescript-eslint/eslint-plugin": "^4.21.0",
     "@typescript-eslint/parser": "^4.21.0",
     "@typescript-eslint/typescript-estree": "^4.21.0",

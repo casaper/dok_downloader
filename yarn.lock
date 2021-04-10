@@ -1087,6 +1087,31 @@
   resolved "https://registry.yarnpkg.com/@types/q/-/q-1.5.4.tgz#15925414e0ad2cd765bfef58842f7e26a7accb24"
   integrity sha512-1HcDas8SEj4z1Wc696tH56G8OlRaH/sqZOynNNB+HF0WOeXPaxTtbYzJY2oEfiUxjSKjhCKr+MvR7dCHcEelug==
 
+"@types/rails-actioncable@^0.0.21":
+  version "0.0.21"
+  resolved "https://registry.yarnpkg.com/@types/rails-actioncable/-/rails-actioncable-0.0.21.tgz#36b2b9ccae318fc11baa02b58e753eefdd370d5d"
+  integrity sha1-NrK5zK4xj8EbqgK1jnU+7903DV0=
+
+"@types/rails__actioncable@^6.1.4":
+  version "6.1.4"
+  resolved "https://registry.yarnpkg.com/@types/rails__actioncable/-/rails__actioncable-6.1.4.tgz#8c7ad242b27057f6a3914f2cd2a58c48ce4e7b6f"
+  integrity sha512-uDLDhcm2tKtFCxvFzXqBj1NNdnPVZS96+9NfYPeXCJM6x07EuZSecgkk45X85HbnB/XqepCQv8wPT0wDAKV4FA==
+
+"@types/rails__activestorage@^6.0.0":
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/@types/rails__activestorage/-/rails__activestorage-6.0.0.tgz#e633f2a430993f754792dfdbe2b64fc1f2d33869"
+  integrity sha512-Qk6dASfYYHym/95KQbPmUECuaveB5+sYEQdHDwKHvmwtrEbqjMH4t56MMCyzarweFDrA6ysULoCoa1f2nydwLg==
+
+"@types/rails__ujs@^6.0.0":
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/@types/rails__ujs/-/rails__ujs-6.0.0.tgz#0c8b72740c83c1d2f4672ff437c04ced049092aa"
+  integrity sha512-VxanK0HnPbU9ks2clU0JL3Q/4obZSEkuoVmIvMBxjtXEOSGjV3qCkJNhmBBwIs6ocY76r/SlXtzVYpPxq9Wc4w==
+
+"@types/turbolinks@^5.2.0":
+  version "5.2.0"
+  resolved "https://registry.yarnpkg.com/@types/turbolinks/-/turbolinks-5.2.0.tgz#cdfd3691143ea2f452113c2a06bd12d9a88b25d6"
+  integrity sha512-xEgHb25lj23EaUlsU3Y4KlFH7elhlYINGSnqyn/8zmcMnenY4Idyjk/x9kw1kOoOToY3de9fD8NSwRzNc6f5nw==
+
 "@types/unist@^2.0.0", "@types/unist@^2.0.2":
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/@types/unist/-/unist-2.0.3.tgz#9c088679876f374eb5983f150d4787aa6fb32d7e"

@@ -12,7 +12,11 @@
     },
     "sourceMap": true,
     "target": "es5",
-    "noEmit": true
+    "noEmit": true,
+    "allowSyntheticDefaultImports": true,
+    "allowJs": true,
+    "importHelpers": true,
+    "esModuleInterop": true
   },
   "exclude": [
     "**/*.spec.ts",
