@@ -1,0 +1,23 @@
+p#notice = notice
+p
+  strong Target dir:
+  = @arte_download.target_dir
+p
+  strong Url:
+  = @arte_download.url
+p
+  strong Added at:
+  = @arte_download.added_at
+p
+  strong User:
+  = @arte_download.user
+p
+  strong Title:
+  = @arte_download.title
+p
+  strong Description:
+  = @arte_download.description
+
+=> link_to 'Edit', edit_arte_download_path(@arte_download)
+'|
+=< link_to 'Back', arte_downloads_path

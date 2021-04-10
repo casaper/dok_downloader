@@ -1,0 +1,31 @@
+h1 Listing arte_downloads
+
+table
+  thead
+    tr
+      th Target dir
+      th Url
+      th Added at
+      th User
+      th Title
+      th Description
+      th
+      th
+      th
+
+  tbody
+    - @arte_downloads.each do |arte_download|
+      tr
+        td = arte_download.target_dir
+        td = arte_download.url
+        td = arte_download.added_at
+        td = arte_download.user
+        td = arte_download.title
+        td = arte_download.description
+        td = link_to 'Show', arte_download
+        td = link_to 'Edit', edit_arte_download_path(arte_download)
+        td = link_to 'Destroy', arte_download, data: { confirm: 'Are you sure?' }, method: :delete
+
+br
+
+= link_to 'New Arte download', new_arte_download_path

@@ -1,13 +1,11 @@
-= simple_form_for(@download) do |f|
+= simple_form_for(@arte_download) do |f|
   = f.error_notification
   = f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present?
 
   .form-inputs
-    = f.association :source
     = f.association :target_dir
     = f.input :url
     = f.input :added_at
-    = f.association :user
     = f.input :title
     = f.input :description
 

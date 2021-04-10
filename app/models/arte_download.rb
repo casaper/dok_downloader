@@ -1,0 +1,2 @@
+class ArteDownload < Download
+end

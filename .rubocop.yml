@@ -39,6 +39,8 @@ Layout/LineLength:
   # elements. Strings will be converted to Regexp objects. A line that matches
   # any regular expression listed in this option will be ignored by LineLength.
   IgnoredPatterns: []
+  Exclude:
+    - config/initializers/devise.rb
 Layout/SpaceInsidePercentLiteralDelimiters:
   Exclude:
     - 'db/migrate/**/*.rb'
