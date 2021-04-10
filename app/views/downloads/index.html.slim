@@ -1,0 +1,33 @@
+h1 Listing downloads
+
+table
+  thead
+    tr
+      th Source
+      th Target dir
+      th Url
+      th Added at
+      th User
+      th Title
+      th Description
+      th
+      th
+      th
+
+  tbody
+    - @downloads.each do |download|
+      tr
+        td = download.source
+        td = download.target_dir
+        td = download.url
+        td = download.added_at
+        td = download.user
+        td = download.title
+        td = download.description
+        td = link_to 'Show', download
+        td = link_to 'Edit', edit_download_path(download)
+        td = link_to 'Destroy', download, data: { confirm: 'Are you sure?' }, method: :delete
+
+br
+
+= link_to 'New Download', new_download_path

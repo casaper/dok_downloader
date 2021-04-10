@@ -1,0 +1,27 @@
+p#notice = notice
+
+p
+  strong Source:
+  = @download.source
+p
+  strong Target dir:
+  = @download.target_dir
+p
+  strong Url:
+  = @download.url
+p
+  strong Added at:
+  = @download.added_at
+p
+  strong User:
+  = @download.user
+p
+  strong Title:
+  = @download.title
+p
+  strong Description:
+  = @download.description
+
+=> link_to 'Edit', edit_download_path(@download)
+'|
+=< link_to 'Back', downloads_path

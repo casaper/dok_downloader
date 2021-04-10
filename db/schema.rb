@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_10_142415) do
+ActiveRecord::Schema.define(version: 2021_04_10_143902) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,6 +43,28 @@ ActiveRecord::Schema.define(version: 2021_04_10_142415) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
+  create_table "downloads", force: :cascade do |t|
+    t.bigint "source_id", null: false
+    t.bigint "target_dir_id", null: false
+    t.string "url"
+    t.datetime "added_at"
+    t.bigint "user_id", null: false
+    t.string "title"
+    t.text "description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["source_id"], name: "index_downloads_on_source_id"
+    t.index ["target_dir_id"], name: "index_downloads_on_target_dir_id"
+    t.index ["user_id"], name: "index_downloads_on_user_id"
+  end
+
+  create_table "sources", force: :cascade do |t|
+    t.string "name"
+    t.string "main_url"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "target_dirs", force: :cascade do |t|
     t.string "path"
     t.string "name"
@@ -73,4 +95,7 @@ ActiveRecord::Schema.define(version: 2021_04_10_142415) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "downloads", "sources"
+  add_foreign_key "downloads", "target_dirs"
+  add_foreign_key "downloads", "users"
 end

@@ -28,7 +28,7 @@ module DokDownloader
       g.integration_tool :rspec
       g.test_framework :rspec
       g.helper_specs false
-      g.controller_specs true
+      g.controller_specs false
       g.view_specs false
       g.routing_specs false
       g.request_specs false
