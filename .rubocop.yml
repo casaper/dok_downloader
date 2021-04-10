@@ -1,0 +1,98 @@
+inherit_from: .rubocop_todo.yml
+
+require:
+  - rubocop-faker
+  - rubocop-rails
+  - rubocop-rspec
+  - rubocop-performance
+
+AllCops:
+  TargetRubyVersion: 3.0.0
+  DisplayStyleGuide: true
+  ExtraDetails: true
+  NewCops: enable
+  Exclude:
+    - "bin/**/*"
+    - "log/**/*"
+    - "public/**/*"
+    - "tmp/**/*"
+    - "vendor/**/*"
+    - "node_modules/**/*"
+    - Rakefile
+    - config.ru
+    - db/schema.rb
+
+Rails:
+  Enabled: true
+
+Layout/LineLength:
+  Max: 120
+  AllowHeredoc: true
+  AllowURI: true
+  URISchemes:
+    - http
+    - https
+  # The IgnoreCopDirectives option causes the LineLength rule to ignore cop
+  # directives like '# rubocop: enable ...' when calculating a line's length.
+  IgnoreCopDirectives: false
+  # The IgnoredPatterns option is a list of !ruby/regexp and/or string
+  # elements. Strings will be converted to Regexp objects. A line that matches
+  # any regular expression listed in this option will be ignored by LineLength.
+  IgnoredPatterns: []
+Layout/SpaceInsidePercentLiteralDelimiters:
+  Exclude:
+    - 'db/migrate/**/*.rb'
+Layout/SpaceInsideArrayLiteralBrackets:
+  Exclude:
+    - 'db/migrate/**/*.rb'
+  
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+Style/FrozenStringLiteralComment:
+  Enabled: false
+Style/Documentation:
+  Enabled: false
+Style/SymbolArray:
+  EnforcedStyle: percent
+  MinSize: 3
+  Exclude:
+    - db/migrate/**/*.rb
+
+Metrics/BlockLength:
+  Exclude:
+    - "Rakefile"
+    - "**/*.rake"
+    - spec/**/*.rb
+  IgnoredMethods:
+    - draw # for routes
+    - define # for FactoryBot
+    - factory
+    - after
+    # for Rspec specs
+    - context
+    - describe
+    - included
+    - feature
+    - path
+    - rails_admin
+Metrics/MethodLength:
+  Exclude:
+    - db/migrate/**/*.rb
+Metrics/AbcSize:
+  Exclude:
+    - db/migrate/**/*.rb
+
+Lint/MissingCopEnableDirective:
+  Enabled: false
+
+RSpec/LetSetup:
+  Enabled: false
+RSpec/DescribedClass:
+  Enabled: false
+RSpec/MultipleExpectations:
+  Enabled: false
+RSpec/ExampleLength:
+  Max: 12
+RSpec/MultipleMemoizedHelpers:
+  Enabled: false
