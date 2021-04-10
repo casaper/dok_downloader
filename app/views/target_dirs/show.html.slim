@@ -1,0 +1,12 @@
+p#notice = notice
+
+p
+  strong Path:
+  = @target_dir.path
+p
+  strong Name:
+  = @target_dir.name
+
+=> link_to 'Edit', edit_target_dir_path(@target_dir)
+'|
+=< link_to 'Back', target_dirs_path

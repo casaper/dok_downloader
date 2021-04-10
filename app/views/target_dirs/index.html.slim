@@ -1,0 +1,23 @@
+h1 Listing target_dirs
+
+table
+  thead
+    tr
+      th Path
+      th Name
+      th
+      th
+      th
+
+  tbody
+    - @target_dirs.each do |target_dir|
+      tr
+        td = target_dir.path
+        td = target_dir.name
+        td = link_to 'Show', target_dir
+        td = link_to 'Edit', edit_target_dir_path(target_dir)
+        td = link_to 'Destroy', target_dir, data: { confirm: 'Are you sure?' }, method: :delete
+
+br
+
+= link_to 'New Target dir', new_target_dir_path

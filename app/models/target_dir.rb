@@ -1,0 +1,2 @@
+class TargetDir < ApplicationRecord
+end
