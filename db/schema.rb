@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_10_143902) do
+ActiveRecord::Schema.define(version: 2021_04_10_150259) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,6 +52,7 @@ ActiveRecord::Schema.define(version: 2021_04_10_143902) do
     t.text "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "type"
     t.index ["target_dir_id"], name: "index_downloads_on_target_dir_id"
     t.index ["user_id"], name: "index_downloads_on_user_id"
   end

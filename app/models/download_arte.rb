@@ -1,0 +1,1 @@
+class DownloadArte < Download; end
